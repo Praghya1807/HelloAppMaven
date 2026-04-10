@@ -22,7 +22,6 @@ public class HelloApp {
             System.out.println("Hello, " + names + "!");
         }
         else {
-            // Default message when no arguments are given
             System.out.println("Hello, World!");
         }
     }
