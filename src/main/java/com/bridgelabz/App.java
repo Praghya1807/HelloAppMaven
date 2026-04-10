@@ -4,25 +4,26 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        // Check if arguments are provided
-        if (args.length > 0) {
+        // If no arguments provided
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
+        }
 
-            StringBuilder names = new StringBuilder();
+        StringBuilder names = new StringBuilder();
+        boolean first = true;
 
-            // Loop through all command-line arguments
-            for (int i = 0; i < args.length; i++) {
-                names.append(args[i]);
+        // Enhanced for loop
+        for (String name : args) {
 
-                // Add comma between names
-                if (i < args.length - 1) {
-                    names.append(", ");
-                }
+            if (!first) {
+                names.append(", ");
             }
 
-            System.out.println("Hello, " + names + "!");
+            names.append(name);
+            first = false;
         }
-        else {
-            System.out.println("Hello, World!");
-        }
+
+        System.out.println("Hello, " + names + "!");
     }
 }
